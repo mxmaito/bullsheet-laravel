@@ -11,19 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/bullsheet/registro', function(){
+Route::get('/registro', function(){
   return view ('auth/register');
 });
 
-Route::get('/bullsheet/login', function(){
+Route::get('/login', function(){
   return view ('login');
 });
 
+Route::get('/fakenews', 'FakeNewsController@index');
 
-Route::get('/bullsheet', 'BullsheetController@index');
+Route::get('/fakenews/new', 'FakeNewsController@create');
+
+Route::get('/realnews', 'RealNewsController@index');
+
+Route::get('/realnews/new', 'RealNewsController@create');
+
+Route::get('/', 'BullsheetController@index');
 
 Auth::routes();
