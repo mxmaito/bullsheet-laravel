@@ -44,11 +44,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function FakeNews(){
+    public function fakeNews(){
       return $this->hasMany(FakeNew::class);
     }
 
-    public function RealNews(){
+    public function realNews(){
       return $this->hasMany(RealNew::class);
     }
 }

@@ -37,7 +37,21 @@ class RealNewsController extends Controller
     {
       $this->validate($request, $this->getValidationRules());
 
-      $realnew = \App\RealNew::create($request->all());
+      $request->realnewsfile->storePublicly('realnewsfiles');
+
+      if(isset($request->realnewsfile)){
+        $rutaArchivo = $request->realnewsfile->storePublicly('realnewsfiles');
+        $nombreArchivo = basename($rutaArchivo);
+      }
+
+      $realnew = auth()->user()->realNews()->create([
+          'headline' => $request->headline,
+          'subheading' => $request->subheading,
+          'caption' => $request->caption,
+          'text' => $request->text,
+          'realnewsfile' => $nombreArchivo,
+      ]);
+      //$realnew = \App\RealNew::create($request->all());
 
       return redirect('/realnews/' . $realnew->id);
 

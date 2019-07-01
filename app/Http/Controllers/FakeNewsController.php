@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class FakeNewsController extends Controller
 {
@@ -44,13 +45,11 @@ class FakeNewsController extends Controller
         $nombreArchivo = basename($rutaArchivo);
       }
 
-      $fakenew = \App\FakeNew::create([
-        'title' => $request->title,
-        'question' => $request->question,
-        'fakenewsfile' => $nombreArchivo
-        ]);
-
-
+      $fakenew = auth()->user()->fakeNews()->create([
+          'title' => $request->title,
+          'question' => $request->question,
+          'fakenewsfile' => $nombreArchivo,
+      ]);
 
       //$filepath = $request->fakenewsfile->storePublicly('fakenewsfiles');
 
@@ -68,6 +67,7 @@ class FakeNewsController extends Controller
       return view('fakenews.show' , [
         'fakenew' => $fakenew
       ]);
+
     }
 
     /**

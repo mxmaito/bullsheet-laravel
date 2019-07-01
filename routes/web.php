@@ -40,4 +40,8 @@ Route::post('/realnews', 'RealNewsController@store');
 
 Route::get('/', 'BullsheetController@index');
 
+Route::get('/logout', function(){
+  return view('layouts.app');
+});
+
 Auth::routes();
