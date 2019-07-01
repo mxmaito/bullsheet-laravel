@@ -16,7 +16,7 @@
   <body>
 
     @include('partials/headerlog')
-     <section  class="_addNews">
+     <!--<section  class="_addNews">
        <div class="icons">
          <ul class="add">
            <li>
@@ -48,7 +48,7 @@
          </li>
          </ul>
        </div>
-     </section>
+     </section>-->
      <section class="_ranking">
        <div class="_textosRanking">
        <h2 class="_rank">Ranking de Fake News</h2>

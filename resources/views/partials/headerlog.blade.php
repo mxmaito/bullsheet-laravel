@@ -12,8 +12,14 @@
                 <li class="nav-item ">
                 <a class="nav-link" href="perfil.php">NEWS FEED</a>
                 </li>
-                <li class="nav-item ">
-                <a class="nav-link" href="perfil.php">ADD NEWS</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ADD NEWS</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">WhatsApp News</a>
+                    <a class="dropdown-item" href="#">Web News</a>
+                    <a class="dropdown-item" href="#">Personal News</a>
+                    </div>
                 </li>
                 <li class="nav-item ">
                 <a class="nav-link" href="perfil.php">EDITAR PERFIL</a>
