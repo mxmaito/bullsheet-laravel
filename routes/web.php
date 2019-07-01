@@ -24,6 +24,11 @@ Route::get('/bullsheet/login', function(){
 });
 
 
+Route::get('/bullsheet/news', function(){
+    return view ('news');
+  });
+
+
 Route::get('/bullsheet', 'BullsheetController@index');
 
 Auth::routes();
