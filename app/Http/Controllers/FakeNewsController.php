@@ -39,6 +39,10 @@ class FakeNewsController extends Controller
 
       $fakenew = \App\FakeNew::create($request->all());
 
+      //$request->fakenewsfile->storePublicly('fakenewsfiles');
+
+      //$filepath = $request->fakenewsfile->storePublicly('fakenewsfiles');
+
       return redirect('/fakenews/' . $fakenew->id);
     }
 

@@ -44,4 +44,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function FakeNews(){
+      return $this->hasMany(FakeNew::class);
+    }
+
+    public function RealNews(){
+      return $this->hasMany(RealNew::class);
+    }
 }
