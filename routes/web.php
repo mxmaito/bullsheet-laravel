@@ -24,9 +24,19 @@ Route::get('/fakenews', 'FakeNewsController@index');
 
 Route::get('/fakenews/new', 'FakeNewsController@create');
 
+Route::get('/fakenews/{fakenew}', 'FakeNewsController@show');
+
+Route::post('/fakenews', 'FakeNewsController@store');
+
+
 Route::get('/realnews', 'RealNewsController@index');
 
 Route::get('/realnews/new', 'RealNewsController@create');
+
+Route::get('/realnews/{realnew}', 'RealNewsController@show');
+
+Route::post('/realnews', 'RealNewsController@store');
+
 
 Route::get('/', 'BullsheetController@index');
 

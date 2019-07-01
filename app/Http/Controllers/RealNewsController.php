@@ -13,7 +13,8 @@ class RealNewsController extends Controller
      */
     public function index()
     {
-          return view ('realnews.index');
+      $realnews = \App\RealNew::all();
+      return view ('realnews.index')->with('realnews', $realnews);
     }
 
     /**
@@ -34,7 +35,12 @@ class RealNewsController extends Controller
      */
     public function store(Request $request)
     {
-        $path = $request->file('realnewsfile')->storePublicly('realnews');
+      $this->validate($request, $this->getValidationRules());
+
+      $realnew = \App\RealNew::create($request->all());
+
+      return redirect('/realnews/' . $realnew->id);
+
     }
 
     /**
@@ -43,9 +49,11 @@ class RealNewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(\App\RealNew $realnew)
     {
-        //
+      return view('realnews.show', [
+          'realnew' => $realnew
+      ]);
     }
 
     /**
@@ -54,9 +62,9 @@ class RealNewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit()
     {
-        //
+
     }
 
     /**
@@ -80,5 +88,14 @@ class RealNewsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getValidationRules(){
+      return[
+        'headline' => 'required',
+        'subheading' => 'required',
+        'caption' => 'required',
+        'text' => 'required',
+      ];
     }
 }

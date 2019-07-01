@@ -18,7 +18,7 @@ class CreateFakeNewsTable extends Migration
             $table->string('title', 80);
             $table->text('question');
             $table->timestamps();
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

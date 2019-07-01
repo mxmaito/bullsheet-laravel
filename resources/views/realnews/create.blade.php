@@ -5,7 +5,7 @@
 
 <h1>Escribí una real news</h1>
 
-<form action="{{ url('/realnews') }}" method="post">
+<form action="{{ url('/realnews') }}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">

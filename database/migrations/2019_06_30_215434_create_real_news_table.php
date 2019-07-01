@@ -18,8 +18,9 @@ class CreateRealNewsTable extends Migration
           $table->string('headline', 80);
           $table->string('subheading', 140);
           $table->text('text');
+          $table->string('caption', 80);
           $table->timestamps();
-          $table->bigInteger('user_id')->unsigned();
+          $table->bigInteger('user_id')->unsigned()->nullable();
           $table->foreign('user_id')->references('id')->on('users');
         });
     }

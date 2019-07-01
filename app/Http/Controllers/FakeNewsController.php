@@ -13,7 +13,8 @@ class FakeNewsController extends Controller
      */
     public function index()
     {
-          return view ('fakenews.index');
+      $fakenews = \App\FakeNew::all();
+      return view ('fakenews.index')->with('fakenews', $fakenews);
     }
 
     /**
@@ -34,8 +35,11 @@ class FakeNewsController extends Controller
      */
     public function store(Request $request)
     {
-      $path = $request->file('fakenewsfile')->storePublicly('fakenews');
+      $this->validate($request, $this->getValidationRules());
 
+      $fakenew = \App\FakeNew::create($request->all());
+
+      return redirect('/fakenews/' . $fakenew->id);
     }
 
     /**
@@ -44,9 +48,11 @@ class FakeNewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(\App\FakeNew $fakenew)
     {
-        //
+      return view('fakenews.show' , [
+        'fakenew' => $fakenew
+      ]);
     }
 
     /**
@@ -81,5 +87,12 @@ class FakeNewsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    private function getValidationRules(){
+      return[
+        'title' => 'required',
+        'question' => 'required',
+      ];
     }
 }

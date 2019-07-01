@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class FakeNew extends Model
 {
-  protected $table = 'fakenews';
+  protected $table = 'fake_news';
 
   protected $with = ['user'];
 

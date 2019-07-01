@@ -5,7 +5,7 @@
 
 <h1>Subí un archivo que te hayan mandado por whatsapp</h1>
 
-<form action="{{ url('/fakenews') }}" method="post">
+<form action="{{ url('/fakenews') }}" method="post" enctype="multipart/form-data">
     @csrf
 
     <div class="form-group">
