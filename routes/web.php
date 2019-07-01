@@ -20,10 +20,11 @@ Route::get('/bullsheet/registro', function(){
 });
 
 Route::get('/bullsheet/login', function(){
-  return view ('login');
+  return view ('auth/login');
 });
 
 
 Route::get('/bullsheet', 'BullsheetController@index');
+Route::post('/bullsheet/home','HomeController@index');
 
 Auth::routes();
