@@ -37,9 +37,20 @@ class FakeNewsController extends Controller
     {
       $this->validate($request, $this->getValidationRules());
 
-      $fakenew = \App\FakeNew::create($request->all());
+      $request->fakenewsfile->storePublicly('fakenewsfiles');
 
-      //$request->fakenewsfile->storePublicly('fakenewsfiles');
+      if(isset($request->fakenewsfile)){
+        $rutaArchivo = $request->fakenewsfile->storePublicly('fakenewsfiles');
+        $nombreArchivo = basename($rutaArchivo);
+      }
+
+      $fakenew = \App\FakeNew::create([
+        'title' => $request->title,
+        'question' => $request->question,
+        'fakenewsfile' => $nombreArchivo
+        ]);
+
+
 
       //$filepath = $request->fakenewsfile->storePublicly('fakenewsfiles');
 
@@ -96,6 +107,7 @@ class FakeNewsController extends Controller
     private function getValidationRules(){
       return[
         'title' => 'required',
+        'fakenewsfile' => 'required | file',
         'question' => 'required',
       ];
     }

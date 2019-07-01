@@ -94,6 +94,7 @@ class RealNewsController extends Controller
       return[
         'headline' => 'required',
         'subheading' => 'required',
+        'realnewsfile' => 'file | required',
         'caption' => 'required',
         'text' => 'required',
       ];

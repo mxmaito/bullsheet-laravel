@@ -11,10 +11,11 @@ class FakeNew extends Model
   protected $with = ['user'];
 
   protected $fillable = [
-      'title', 'file', 'question'
+      'title', 'file', 'question', 'fakenewsfile'
   ];
 
   protected $dates = ['created_at'];
+
 
 
   public function user()

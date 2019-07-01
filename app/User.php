@@ -8,11 +8,10 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
-    //public $table = 'users';
+      public $table = 'users';
 
       //protected $table = 'movies';
       //protected $primaryKey = 'id';
-      public $timestamps = false;
       protected $guarded = []; // colocar aquí los campos que no quiero que se puedan modificar
 
 

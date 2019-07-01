@@ -19,8 +19,8 @@
     </div>
 
     <div class="form-group">
-        <input type="file" name="file" placeholder="" value="{{ old('file') }}">
-                <p>{{ $errors->first('file') }}</p>
+        <input type="file" name="realnewsfile" placeholder="" value="{{ old('realnewsfile') }}">
+                <p>{{ $errors->first('realnewsfile') }}</p>
     </div>
 
     <div class="form-group">

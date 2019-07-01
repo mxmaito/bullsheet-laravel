@@ -11,7 +11,7 @@ class RealNew extends Model
   protected $with = ['user'];
 
   protected $fillable = [
-      'headline', 'subheading', 'photo', 'caption', 'text'
+      'headline', 'subheading', 'photo', 'caption', 'text', 'realnewsfile'
   ];
 
   protected $dates = ['created_at'];
