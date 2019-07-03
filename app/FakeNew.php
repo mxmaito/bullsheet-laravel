@@ -23,4 +23,5 @@ class FakeNew extends Model
       return $this->belongsTo('App\User', 'foreign_key');
   }
 
+  
 }

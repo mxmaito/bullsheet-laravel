@@ -38,10 +38,10 @@ class FakeNewsController extends Controller
     {
       $this->validate($request, $this->getValidationRules());
 
-      $request->fakenewsfile->storePublicly('fakenewsfiles');
+      $request->fakenewsfile->storePublicly('public/fakenewsfiles');
 
       if(isset($request->fakenewsfile)){
-        $rutaArchivo = $request->fakenewsfile->storePublicly('fakenewsfiles');
+        $rutaArchivo = $request->fakenewsfile->storePublicly('public/fakenewsfiles');
         $nombreArchivo = basename($rutaArchivo);
       }
 

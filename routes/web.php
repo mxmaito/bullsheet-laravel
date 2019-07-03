@@ -38,6 +38,10 @@ Route::get('/realnews/{realnew}', 'RealNewsController@show');
 Route::post('/realnews', 'RealNewsController@store');
 
 
+Route::get('/cheknews/new', 'ChekNewsController@create');
+Route::post('/cheknews', 'ChekNewsController@store');
+
+
 Route::get('/', 'BullsheetController@index');
 
 Route::get('/logout', function(){

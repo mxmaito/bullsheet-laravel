@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class RealNewsController extends Controller
 {
@@ -40,7 +41,7 @@ class RealNewsController extends Controller
       $request->realnewsfile->storePublicly('realnewsfiles');
 
       if(isset($request->realnewsfile)){
-        $rutaArchivo = $request->realnewsfile->storePublicly('realnewsfiles');
+        $rutaArchivo = $request->realnewsfile->storePublicly('public/realnewsfiles');
         $nombreArchivo = basename($rutaArchivo);
       }
 

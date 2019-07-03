@@ -16,6 +16,7 @@
 
       @include('partials/header')
       @yield('content')
+      @include('partials/cheknew')
       @include('partials/footer')
 
 
