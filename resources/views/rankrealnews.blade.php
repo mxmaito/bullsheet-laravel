@@ -51,37 +51,42 @@
      </section>-->
      <section class="_ranking">
        <div class="_textosRanking">
-       <h2 class="_rank">Ranking de Fake News</h2>
-       <a class="_verNoticia" href="">ver todas las noticias</a>
+       <h2 class="_rank">Ranking de Real News</h2>
+       <a class="_verNoticia" href="/realnews">ver todas las noticias</a>
        </div>
-
+       <?php $i = 0; ?>
+       <?php $cant = $realnews->count(); ?>
        <ul>
-       -
+       @foreach ($realnews as $realnew)
+       <?php $i++; ?>
+       <div class="noticia">
        <li>
 
        <div class="card mb-3  " style="max-width: 540px;">
           <div class="row no-gutters">
              <div class="col-md-4">
-                <img src="" class="card-img" alt="...">
+             <img src="/storage/realnewsfiles/{{$realnew['realnewsfile']}}" width=100% alt="imagen">
               </div>
                <div class="col-md-8">
                 <div class="card-body">
                 <div class="ranking_type">
-              <img class="_newsType" src="" alt="news_type">
-              <p>1/6</p>
+              <img class="_newsType" src="img/internet.png" alt="news_type">
+              <p>{{$i}}/{{$cant}}</p>
             </div>
-                  <h5 class="card-title">Titulo</h5>
-                  <p class="card-text">Descripcion</p>
-                  <p>Valoraciones</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                  <h5 class="card-title">{{$realnew->headline}}</h5>
+                  <h6 class="card-title">{{$realnew->subheading}}</h6>
+                  <p class="card-text">{{$realnew->text}}</p>
+                  <p class="card-text"><small class="text-muted">{{$realnew->caption}}</small></p>
                 </div>
             </div>
           </div>
         </div>
 
         </li>
-        -
+        </div>
+        @endforeach
         </ul>
+
 
 
 
@@ -113,28 +118,20 @@
       <th scope="col"></th>
       <th scope="col">Nombre de Usuario</th>
       <th scope="col">Cantidad de notas subidas</th>
-      <th scope="col">Valoracion</th>
+
     </tr>
   </thead>
   <tbody>
+  <?php $j = 0; ?>
+  @foreach($ranks as $rank)
     <tr>
-      <th scope="row">1</th>
-      <td>Nombre de Usuario</td>
-      <td>Cantidad de notas subidas</td>
-      <td>Valoracion</td>
+    <?php $j++; ?>
+      <th scope="row">{{$j}}</th>
+      <td>{{$rank->first_name . ' ' . $rank->last_name}}</td>
+      <td>{{$rank->news_count}}</td>
+
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Nombre de Usuario</td>
-      <td>Cantidad de notas subidas</td>
-      <td>Valoracion</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Nombre de Usuario</td>
-      <td>Cantidad de notas subidas</td>
-      <td>Valoracion</td>
-    </tr>
+    @endforeach
   </tbody>
 </table>
      </section>

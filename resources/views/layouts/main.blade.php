@@ -14,7 +14,7 @@
   </head>
   <body>
 
-      @include('partials/header')
+      @include('partials/headerlog')
       @yield('content')
       @include('partials/footer')
 

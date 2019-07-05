@@ -21,4 +21,10 @@ class RealNew extends Model
   {
       return $this->belongsTo(User::class);
   }
+
+
+  //public function UserRanking(){
+    //$realnew= RealNew::all();
+    //dd($realnew);
+  //}
 }

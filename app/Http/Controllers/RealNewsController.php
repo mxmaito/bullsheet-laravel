@@ -113,4 +113,5 @@ class RealNewsController extends Controller
         'text' => 'required',
       ];
     }
+
 }
