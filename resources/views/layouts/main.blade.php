@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,7 +13,7 @@
   </head>
   <body>
 
-      @include('partials/header')
+      @include('partials/headerlog')
       @yield('content')
       @include('partials/footer')
 
