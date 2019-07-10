@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,15 +15,13 @@
   </head>
   <body>
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-      @include('partials/navbar')
-=======
       @include('partials/headerlog')
->>>>>>> origin/ceci
 =======
       @include('partials/headerlog')
 >>>>>>> 5ac489ae8a2fead8452abb7f5743c261efa2bc2a
+=======
+      @include('partials/headerlog')
+>>>>>>> origin/tincho
       @yield('content')
       @include('partials/footer')
 

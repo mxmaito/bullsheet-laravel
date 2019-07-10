@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use  \App\RealNew;
 use Illuminate\Support\Facades\DB;
-
 class RankRealNewsController extends Controller
 {
     public function index()
@@ -20,17 +17,11 @@ class RankRealNewsController extends Controller
             ->get();
       return view ('rankrealnews')->with('realnews', $realnews)->with('ranks', $rank);
     }
-
-
-
-
 }
-
 //$rank=DB::select('SELECT users.first_name as nombre, users.last_name as surname, count(*)as cuenta
 //from real_news
 //join users where users.id = real_news.user_id
 //group by user_id
 //order by cuenta desc');
-
 //return $rank;
 //}

@@ -1,9 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
 class RealNewsController extends Controller
 {
     /**
@@ -16,7 +13,6 @@ class RealNewsController extends Controller
       $realnews = \App\RealNew::all();
       return view ('realnews.index')->with('realnews', $realnews);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +22,6 @@ class RealNewsController extends Controller
     {
           return view ('realnews.create');
     }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -36,14 +31,11 @@ class RealNewsController extends Controller
     public function store(Request $request)
     {
       $this->validate($request, $this->getValidationRules());
-
       $request->realnewsfile->storePublicly('realnewsfiles');
-
       if(isset($request->realnewsfile)){
         $rutaArchivo = $request->realnewsfile->storePublicly('realnewsfiles');
         $nombreArchivo = basename($rutaArchivo);
       }
-
       $realnew = auth()->user()->realNews()->create([
           'headline' => $request->headline,
           'subheading' => $request->subheading,
@@ -52,11 +44,8 @@ class RealNewsController extends Controller
           'realnewsfile' => $nombreArchivo,
       ]);
       //$realnew = \App\RealNew::create($request->all());
-
       return redirect('/realnews/' . $realnew->id);
-
     }
-
     /**
      * Display the specified resource.
      *
@@ -69,7 +58,6 @@ class RealNewsController extends Controller
           'realnew' => $realnew
       ]);
     }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -78,9 +66,7 @@ class RealNewsController extends Controller
      */
     public function edit()
     {
-
     }
-
     /**
      * Update the specified resource in storage.
      *
@@ -92,7 +78,6 @@ class RealNewsController extends Controller
     {
         //
     }
-
     /**
      * Remove the specified resource from storage.
      *
@@ -103,7 +88,6 @@ class RealNewsController extends Controller
     {
         //
     }
-
     private function getValidationRules(){
       return[
         'headline' => 'required',

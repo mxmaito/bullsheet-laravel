@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use  \App\FakeNew;
 use Illuminate\Support\Facades\DB;
-
 class RankFakeNewsController extends Controller
 {
     public function index()
