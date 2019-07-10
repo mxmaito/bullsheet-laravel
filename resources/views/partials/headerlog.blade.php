@@ -1,6 +1,6 @@
 <header>
       <nav id="nav" class="navbar navbar-expand-lg navbar-dark _bgdegree">
-            <a class="navbar-brand _logo" href="/bullsheet">BullSheet</a>
+            <a class="navbar-brand _logo" href="/">BullSheet</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>

@@ -25,6 +25,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/fakenews', 'FakeNewsController@store');
     Route::get('/rankrealnews', 'RankRealNewsController@index');
     Route::get('/rankfakenews', 'RankFakeNewsController@index');
+    Route::get('/news', 'NewsController@index');
     Route::get('/realnews', 'RealNewsController@index');
     Route::get('/realnews/new', 'RealNewsController@create');
     Route::get('/realnews/{realnew}', 'RealNewsController@show');

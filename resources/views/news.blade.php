@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,130 +14,23 @@
   <body>
 
     @include('partials/headerlog')
-     <!--<section  class="_addNews">
-       <div class="icons">
-         <ul class="add">
-           <li>
-            <div class="_nombreUsuario">
-              <a href=""><img class="_imgAvatar " src="" alt="Avatar" ></a>
-              <img class="_medal" src="/img/medal.png" alt="medal">
-              <p class="_textoUsuario">Nombre Usuario</p>
-            </div>
-         </li>
-         <li>
-           <div class="_webNews">
-              <a href=""><img class="_list" src="/img/list.png" alt="list"></a>
-              <img class="_internet" src="/img/internet.png" alt="internet">
-              <p class="_textoWeb">Nueva web News</p>
-            </div>
-         </li>
-         <li>
-           <div class="_whatsNews">
-              <a href=""><img class="_list" src="/img/list.png" alt="list"></a>
-              <img class="_whatsapp" src="/img/whatsapp.png" alt="intenet">
-              <p class="_textowhats">Nueva WhatsApp News</p>
-            </div>
-         </li>
-         <li>
-           <div>
-              <a href=""><img class="_newspaper" src="/img/newspaper.png" alt="list"></a>
-              <p class="_textoPropia">Noticia Propia</p>
-            </div>
-         </li>
-         </ul>
-       </div>
-     </section>-->
-     <section class="_ranking">
-       <div class="_textosRanking">
-       <h2 class="_rank">Ranking de Fake News</h2>
-       <a class="_verNoticia" href="">ver todas las noticias</a>
-       </div>
 
-       <ul>
-       -
-       <li>
+    <section>
+    <div class="overlay" id="overlay">
+  <div class="popup" id="popup">
+    <a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times-circle"></i></a>
 
-       <div class="card mb-3  " style="max-width: 540px;">
-          <div class="row no-gutters">
-             <div class="col-md-4">
-                <img src="" class="card-img" alt="...">
-              </div>
-               <div class="col-md-8">
-                <div class="card-body">
-                <div class="ranking_type">
-              <img class="_newsType" src="" alt="news_type">
-              <p>1/6</p>
-            </div>
-                  <h5 class="card-title">Titulo</h5>
-                  <p class="card-text">Descripcion</p>
-                  <p>Valoraciones</p>
-                  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                </div>
-            </div>
-          </div>
-        </div>
-
-        </li>
-        -
-        </ul>
+    <h1 class="card-title">{{$fakenew->title}}</h1>
+    <h2 class="card-title">{{$fakenew->question}} </h2>
+    <div class="col-md-8">
+        <img src="/storage/fakenewsfiles/{{$fakenew['fakenewsfile']}}" width=100% alt="imagen">
+    </div>
+  </div>
+</div>
+</section>
 
 
 
-       <!-- <div class="">
-				<article class="noticia">
-					<div class="news-container">
-            <div class="ranking_type">
-              <img class="_newsType" src="img/</*?=$value["imagen_tipo"]?>" alt="news_type">
-              <p>1/6</p>
-            </div>
-            <div>
-            <img class="imagenNews" src="img/</*?=$value["imagen"]?>" alt="imagenNoticia">
-              <h2></*?=$value["titulo"] ?></h2>
-              <p></*?=$value["descripcion"] ?></p>
-              <p></*?=$value["valoraciones"]?>Valoraciones</p>
-            </div>
-          </div>
-        </article>
-        </div> -->
-
-
-
-     </section>
-     <section class="_rankTable">
-     <h2 class="_rank2">Ranking de Usuarios</h2>
-     <table class="table table-borderless">
-  <thead>
-    <tr>
-      <th scope="col"></th>
-      <th scope="col">Nombre de Usuario</th>
-      <th scope="col">Cantidad de notas subidas</th>
-      <th scope="col">Valoracion</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Nombre de Usuario</td>
-      <td>Cantidad de notas subidas</td>
-      <td>Valoracion</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Nombre de Usuario</td>
-      <td>Cantidad de notas subidas</td>
-      <td>Valoracion</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Nombre de Usuario</td>
-      <td>Cantidad de notas subidas</td>
-      <td>Valoracion</td>
-    </tr>
-  </tbody>
-</table>
-     </section>
-
-@include ('partials/footer')
 
 
 
