@@ -16,6 +16,8 @@
                     <a class="dropdown-item" href="/rankrealnews">Real News</a>
                     <a class="dropdown-item" href="/rankfakenews">Fake News</a>
                     </div>
+<<<<<<< HEAD
+=======
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -23,6 +25,20 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/realnews">Real News</a>
                     <a class="dropdown-item" href="/fakenews">Fake News</a>
+                    </div>
+>>>>>>> 5ac489ae8a2fead8452abb7f5743c261efa2bc2a
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    NEWS FEED</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<<<<<<< HEAD
+                    <a class="dropdown-item" href="/realnews">Real News</a>
+                    <a class="dropdown-item" href="/fakenews">Fake News</a>
+=======
+                    <a class="dropdown-item" href="/fakenews/new">Fake News</a>
+                    <a class="dropdown-item" href="/realnews/new">Real News</a>
+>>>>>>> 5ac489ae8a2fead8452abb7f5743c261efa2bc2a
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -38,6 +54,7 @@
                 </li>
                 <li class="nav-item ">
                 <a  id="btn-abrir-popup"class="nav-link btn-abrir-popup" href="/logout">LOGOUT</a>
+<<<<<<< HEAD
                 </li> --}}
                 <!-- Right Side Of Navbar -->
                 {{-- <ul class="navbar-nav ml-auto"> --}}
@@ -71,6 +88,9 @@
                         </li>
                     @endguest
                 {{-- </ul> --}}
+=======
+                </li>
+>>>>>>> 5ac489ae8a2fead8452abb7f5743c261efa2bc2a
              </ul>
             </div>
      </nav>
