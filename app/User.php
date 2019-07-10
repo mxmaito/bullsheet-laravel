@@ -51,4 +51,8 @@ class User extends Authenticatable
     public function realNews(){
       return $this->hasMany(RealNew::class);
     }
+
+    public function chekNews(){
+      return $this->hasMany(ChekNew::class);
+    }
 }

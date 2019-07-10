@@ -1,6 +1,11 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+<<<<<<< HEAD
+=======
+use App\User;
+
+>>>>>>> origin/maximaito
 class RealNewsController extends Controller
 {
     /**
@@ -33,7 +38,7 @@ class RealNewsController extends Controller
       $this->validate($request, $this->getValidationRules());
       $request->realnewsfile->storePublicly('realnewsfiles');
       if(isset($request->realnewsfile)){
-        $rutaArchivo = $request->realnewsfile->storePublicly('realnewsfiles');
+        $rutaArchivo = $request->realnewsfile->storePublicly('public/realnewsfiles');
         $nombreArchivo = basename($rutaArchivo);
       }
       $realnew = auth()->user()->realNews()->create([

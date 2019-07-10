@@ -59,6 +59,10 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 
+Route::get('/cheknews/new', 'ChekNewsController@create');
+Route::post('/cheknews', 'ChekNewsController@store');
+
+
 Route::get('/', 'BullsheetController@index');
 
 Route::get('/profile','UserController@index');
