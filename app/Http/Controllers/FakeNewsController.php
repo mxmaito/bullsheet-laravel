@@ -64,6 +64,7 @@ class FakeNewsController extends Controller
      */
     public function show(\App\FakeNew $fakenew)
     {
+      
       return view('fakenews.show' , [
         'fakenew' => $fakenew
       ]);
