@@ -20,7 +20,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/rankrealnews';
+    protected $redirectTo = '/rankfakenews';
     /**
      * Create a new controller instance.
      *
