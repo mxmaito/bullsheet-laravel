@@ -20,6 +20,8 @@ Route::get('/login', function(){
   return view ('login');
 });
 
+Route::get('/news', 'NewsController@index');
+
 Route::get('/fakenews', 'FakeNewsController@index');
 
 Route::get('/fakenews/new', 'FakeNewsController@create');
@@ -39,6 +41,12 @@ Route::post('/realnews', 'RealNewsController@store');
 
 
 Route::get('/', 'BullsheetController@index');
+
+Route::get('/profile','UserController@index');
+Route::get('/profile/edit',function(){
+  return view('auth.editProfile');
+});
+Route::post('/profile/edit','UserController@store');
 
 Route::get('/logout', function(){
   return view('layouts.app');

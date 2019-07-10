@@ -7,26 +7,70 @@
             <div class="collapse navbar-collapse" id="navbarNav">
              <ul class="navbar-nav ml-md-auto">
                 <li class="nav-item active">
-                <a class="nav-link " href="/bullsheet">HOME <span class="sr-only">(current)</span></a>
+                <a class="nav-link " href="/">HOME <span class="sr-only">(current)</span></a>
                 </li>
-                <li class="nav-item ">
-                <a class="nav-link" href="perfil.php">NEWS FEED</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    RANKING</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/rankrealnews">Real News</a>
+                    <a class="dropdown-item" href="/rankfakenews">Fake News</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    NEWS FEED</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/realnews">Real News</a>
+                    <a class="dropdown-item" href="/fakenews">Fake News</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     ADD NEWS</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">WhatsApp News</a>
-                    <a class="dropdown-item" href="#">Web News</a>
-                    <a class="dropdown-item" href="#">Personal News</a>
+                    <a class="dropdown-item" href="/fakenews/new">Fake News</a>
+                    <a class="dropdown-item" href="/realnews/new">Real News</a>
                     </div>
-                </li>
+                {{-- </li>
                 <li class="nav-item ">
                 <a class="nav-link" href="perfil.php">EDITAR PERFIL</a>
                 </li>
                 <li class="nav-item ">
-                <a  id="btn-abrir-popup"class="nav-link btn-abrir-popup" href="logout.php">LOGOUT</a>
-                </li>
+                <a  id="btn-abrir-popup"class="nav-link btn-abrir-popup" href="/logout">LOGOUT</a>
+                </li> --}}
+                <!-- Right Side Of Navbar -->
+                {{-- <ul class="navbar-nav ml-auto"> --}}
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                {{-- </ul> --}}
              </ul>
             </div>
      </nav>

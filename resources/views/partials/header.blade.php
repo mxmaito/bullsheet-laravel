@@ -14,10 +14,10 @@
             <a class="nav-link" href="#faq">PREGUNTAS FRECUENTES</a>
           </li>
           <li class="nav-item ">
-              <a  id="btn-abrir-popup"class="nav-link btn-abrir-popup" href="{{'register'}}">REGISTRARSE</a>
+              <a  id="btn-abrir-popup"class="nav-link btn-abrir-popup" href="{{'/register'}}">REGISTRARSE</a>
           </li>
           <li class="nav-item ">
-              <a class="nav-link" href="{{'login'}}">LOGIN</a>
+              <a class="nav-link" href="{{'/login'}}">LOGIN</a>
           </li>
         </ul>
       </div>
