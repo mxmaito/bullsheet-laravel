@@ -1,11 +1,8 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-<<<<<<< HEAD
-=======
 use App\User;
 
->>>>>>> origin/maximaito
 class RealNewsController extends Controller
 {
     /**

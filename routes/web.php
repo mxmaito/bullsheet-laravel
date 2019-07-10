@@ -18,7 +18,6 @@ Route::get('/login', function(){
   return view ('login');
 });
 
-<<<<<<< HEAD
 Route::get('/news', 'NewsController@index');
 
 Route::get('/fakenews', 'FakeNewsController@index');
@@ -41,7 +40,7 @@ Route::get('/realnews/new', 'RealNewsController@create');
 Route::get('/realnews/{realnew}', 'RealNewsController@show');
 
 Route::post('/realnews', 'RealNewsController@store');
-=======
+
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/fakenews', 'FakeNewsController@index');
     Route::get('/fakenews/new', 'FakeNewsController@create');
@@ -55,12 +54,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/realnews/{realnew}', 'RealNewsController@show');
     Route::post('/realnews', 'RealNewsController@store');
 });
->>>>>>> origin/tincho
 
 
-
-Route::get('/cheknews/new', 'ChekNewsController@create');
-Route::post('/cheknews', 'ChekNewsController@store');
 
 
 Route::get('/', 'BullsheetController@index');
