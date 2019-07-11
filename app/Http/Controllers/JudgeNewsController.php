@@ -3,10 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
 
-
-class ChekNewsController extends Controller
+class JudgeNewsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -36,23 +34,12 @@ class ChekNewsController extends Controller
      */
     public function store(Request $request)
     {
-      $cheknew = auth()->User()->chekNews()->create([
-          'chek1' => $request->chek1,
-          'chek2' => $request->chek2,
-          'chek3' => $request->chek3,
-          'chek4' => $request->chek4,
-          'chek5' => $request->chek5,
-          'chek6' => $request->chek6,
-          'chek7' => $request->chek7,
-          'chek8' => $request->chek8,
-          'chek9' => $request->chek9,
-          'chek10' => $request->chek10,
-          'fake_news_id' => $request->fake_news_id,
-          'chekresult' => $request->chek1 + $request->chek2 + $request->chek3 + $request->chek4 + $request->chek5 + $request->chek6 + $request->chek7 + $request->chek8 + $request->chek9 + $request->chek10,
-      ]);
+      $judgenew = auth()->User()->judgeNews()->create([
+          'judge' => $request->judge,
+          'real_news_id' => $request->real_news_id,
+        ]);
 
-      return redirect('/rankfakenews/');
-
+      return redirect('/rankrealnews/');  
     }
 
     /**

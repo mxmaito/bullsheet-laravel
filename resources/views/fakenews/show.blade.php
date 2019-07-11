@@ -1,4 +1,4 @@
-@extends('layouts.show')
+@extends('layouts.showfakenews')
 
 @section('content')
 

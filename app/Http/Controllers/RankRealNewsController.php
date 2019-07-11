@@ -15,7 +15,7 @@ class RankRealNewsController extends Controller
             ->orderBy('news_count','desc')
             ->take(5)
             ->get();
-      return view ('rankrealnews')->with('realnews', $realnews)->with('ranks', $rank);
+      return view ('rankrealnews.index')->with('realnews', $realnews)->with('ranks', $rank);
     }
 }
 //$rank=DB::select('SELECT users.first_name as nombre, users.last_name as surname, count(*)as cuenta

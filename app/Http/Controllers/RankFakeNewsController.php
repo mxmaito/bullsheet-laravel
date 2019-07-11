@@ -15,6 +15,6 @@ class RankFakeNewsController extends Controller
             ->orderBy('news_count','desc')
             ->take(5)
             ->get();
-      return view ('rankfakenews')->with('fakenews', $fakenews)->with('ranks', $rank);
+      return view ('rankfakenews.index')->with('fakenews', $fakenews)->with('ranks', $rank);
     }
 }

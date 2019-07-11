@@ -55,4 +55,8 @@ class User extends Authenticatable
     public function chekNews(){
       return $this->hasMany(ChekNew::class);
     }
+
+    public function judgeNews(){
+      return $this->hasMany(JudgeNew::class);
+    }
 }

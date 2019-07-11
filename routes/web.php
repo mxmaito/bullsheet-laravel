@@ -20,26 +20,7 @@ Route::get('/login', function(){
 
 Route::get('/news', 'NewsController@index');
 
-Route::get('/fakenews', 'FakeNewsController@index');
 
-Route::get('/fakenews/new', 'FakeNewsController@create');
-
-Route::get('/fakenews/{fakenew}', 'FakeNewsController@show');
-
-Route::post('/fakenews', 'FakeNewsController@store');
-
-Route::get('/rankrealnews', 'RankRealNewsController@index');
-
-Route::get('/rankfakenews', 'RankFakeNewsController@index');
-
-
-Route::get('/realnews', 'RealNewsController@index');
-
-Route::get('/realnews/new', 'RealNewsController@create');
-
-Route::get('/realnews/{realnew}', 'RealNewsController@show');
-
-Route::post('/realnews', 'RealNewsController@store');
 
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/fakenews', 'FakeNewsController@index');
@@ -48,6 +29,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/fakenews', 'FakeNewsController@store');
     Route::get('/rankrealnews', 'RankRealNewsController@index');
     Route::get('/rankfakenews', 'RankFakeNewsController@index');
+    Route::post('/rankfakenews', 'ChekNewsController@store');
+    Route::get('/rankrealnews', 'RankRealNewsController@index');
+    Route::post('/rankrealnews', 'JudgeNewsController@store');
     Route::get('/news', 'NewsController@index');
     Route::get('/realnews', 'RealNewsController@index');
     Route::get('/realnews/new', 'RealNewsController@create');

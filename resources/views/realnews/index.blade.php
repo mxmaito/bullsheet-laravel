@@ -12,7 +12,7 @@
           <p class="card-text ">{{$realnew->subheading}}</p>
           <p class="card-text ">{{$realnew->caption}}</p>
           <p class="card-text ">{{$realnew->text}}</p>
-          <a href="/fakenews/{{$realnew->id}}" class="d-flex btn btn-primary __comprar">Ver detalle</a>
+          <a href="/realnews/{{$realnew->id}}" class="d-flex btn btn-primary __comprar">Ver detalle</a>
         </div>
       </div>
 @endforeach

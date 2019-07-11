@@ -1,10 +1,10 @@
 
 
-<h1>Para chequear una noticia, completá el formulario</h1>
+<h1>Para chequear una Fake News, completá el formulario</h1>
 
 
 
-<form action="{{ url('/cheknews') }}" method="post" enctype="multipart/form-data">
+<form action="{{ url('/rankfakenews') }}" method="post" enctype="multipart/form-data">
     @csrf
 
       <input type="hidden" name="fake_news_id" value="{{$fakenew['id']}}">
@@ -18,7 +18,7 @@
     <div class="form-group">
       <label for="chek2">Tiene fecha de publicación?</label><br>
         <input type="radio" name="chek2" value="1">Sí <br>
-        <input type="radio" name="chek3" value="0">No <br>
+        <input type="radio" name="chek2" value="0">No <br>
     </div>
 
     <div class="form-group">
