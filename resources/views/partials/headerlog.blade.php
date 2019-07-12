@@ -36,6 +36,10 @@
                     <a class="dropdown-item" href="/fakenews/new">Fake News</a>
                     <a class="dropdown-item" href="/realnews/new">Real News</a>
                     </div>
+                </li>
+                <li class="nav-item active">
+                <a class="nav-link " href="/profile">PERFIL <span class="sr-only">(current)</span></a>
+                </li>
 
                     @guest
                         <li class="nav-item">

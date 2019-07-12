@@ -15,8 +15,16 @@ class ChekNewsController extends Controller
      */
     public function index()
     {
-        //
+      $fakenews = \App\FakeNew::all()->take(6);
+      $rankNew = DB::table('chek_news')
+            ->join('fake_news','fake_news.id','=','fake_news_id')
+            ->select('fake_news.title','fake_news.question', 'fake_news.fakenewsfile')
+            ->orderBy('chekresult','desc')
+            ->take(5)
+            ->get();
+      return view ('rankfakenews.index')->with('fakenews', $fakenews)->with('rankNews', $rankNew);
     }
+
 
     /**
      * Show the form for creating a new resource.

@@ -1,20 +1,38 @@
 @extends('layouts.main')
 
 @section('content')
+<div class="_ranking">
 
-
-<h1>Acá va el feed de fakenews</h1>
+<h1 style="color:white">Feed de Fakenews</h1>
 
   @foreach ($fakenews as $fakenew)
-        <div class="d-flex card col-12 col-md-4 col-lg-3 " style="width: 18rem;">
-          <div class="card-body">
-            <strong><p class="card-text ">{{$fakenew->title}}</p></strong>
-            <p class="card-text ">{{$fakenew->question}}</p>
+  <div class="noticia">
+    <li>
+         <div class="card mb-3" style="max-width: 540px;">
+             <div class="row no-gutters">
+                 <div class="col-md-4">
+                 <img src="/storage/fakenewsfiles/{{$fakenew->fakenewsfile}}" width=100% alt="imagen">
+                 </div>
+                 <div class="col-md-8">
+                     <div class="card-body">
+                     <div class="ranking_type">
+                 <img class="_newsType" src="img/internet.png" alt="news_type">
 
-            <a href="/fakenews/{{$fakenew->id}}" class="d-flex btn btn-primary __comprar">Ver detalle</a>
-          </div>
-        </div>
+                 </div>
+                     <h5 class="card-title">{{$fakenew->title}}</h5>
+                     <h6 class="card-title">{{$fakenew->question}} </h6>
+
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </li>
+     </div>
   @endforeach
 
 
 @endsection
+</div>
+
+
+

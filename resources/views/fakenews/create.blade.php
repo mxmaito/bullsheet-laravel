@@ -1,7 +1,9 @@
 @extends('layouts.main')
 
 @section('content')
-
+<div class="_bgdegree">
+<div class="noticia">
+<div class="popup" id="popup">
 
 <h1>Subí un archivo que te hayan mandado por whatsapp</h1>
 
@@ -19,7 +21,7 @@
     </div>
 
     <div class="form-group">
-        <input type="text" name="question" placeholder="Contanos qué te hace pensar que esta información es fake" value="{{ old('question') }}">
+    <textarea  name="question" id="" cols="30" rows="5" placeholder="Contanos qué te hace pensar que esta información es fake" value="{{ old('question') }}"></textarea>
         <p>{{ $errors->first('question') }}</p>
     </div>
 
@@ -27,5 +29,9 @@
         <button>Enviar</button>
     </div>
 </form>
-
+</div>
+</div>
 @endsection
+</div>
+
+

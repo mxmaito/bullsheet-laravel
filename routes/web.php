@@ -37,18 +37,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/realnews/new', 'RealNewsController@create');
     Route::get('/realnews/{realnew}', 'RealNewsController@show');
     Route::post('/realnews', 'RealNewsController@store');
-});
+    Route::get('/profile','UserController@index');
+    Route::get('/profile/edit',function(){
+    return view('auth.editProfile');
+    });
+    Route::post('/profile/edit','UserController@store');
+    });
 
 
 
 
 Route::get('/', 'BullsheetController@index');
 
-Route::get('/profile','UserController@index');
-Route::get('/profile/edit',function(){
-  return view('auth.editProfile');
-});
-Route::post('/profile/edit','UserController@store');
+
 
 Route::get('/logout', function(){
   return view('/layouts/home');
