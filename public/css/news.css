@@ -121,3 +121,11 @@
  padding: 10px;
 
 }
+
+._contenedorImagenNews{
+  padding: 25px;
+  width: 100%;
+}
+._imagenNews{
+  width:30vw;
+}

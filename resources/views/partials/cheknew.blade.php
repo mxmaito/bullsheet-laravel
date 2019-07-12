@@ -1,9 +1,11 @@
 
+<div class="text-center">
 
-<h1>Para chequear una Fake News, completá el formulario</h1>
+<br>
+<h2>Ayudanos a saber si es una Fake News, para eso favor completá el formulario</h2>
+<br>
 
-
-
+<h5>
 <form action="{{ url('/rankfakenews') }}" method="post" enctype="multipart/form-data">
     @csrf
 
@@ -69,7 +71,9 @@
         <input type="radio" name="chek10" value="1">No <br>
     </div>
 
-    <div class="form-control">
-        <button>Enviar</button>
-    </div>
+    <br>
+      <button class="btn btn-primary">Enviar</button>
+
 </form>
+</h5>
+</div>

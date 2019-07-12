@@ -2,11 +2,23 @@
 
 @section('content')
 
+<section class="_ranking">
 
-<h1>Acá entrás a una fakenew específica y podés hacer comentarios</h1>
-{{$fakenew}}<br>
 
-<img src="/storage/fakenewsfiles/{{$fakenew['fakenewsfile']}}" alt="">
-{{$fakenew}}<br>
+  <div class="text-light text-center">
+
+    <br><h2>
+    {{$fakenew->title}}
+    </h2><br> <br>
+    <div class="_contenedorImagenNews">
+    <img class="_imagenNews" src="/storage/fakenewsfiles/{{$fakenew['fakenewsfile']}}" alt="">
+    </div>
+    <br>
+    <br><h3>
+    {{$fakenew->question}}
+    </h3><br> <br>
+
+  </div>
+</section>
 
 @endsection

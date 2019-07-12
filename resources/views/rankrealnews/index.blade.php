@@ -26,6 +26,7 @@
                <h6 class="card-title">{{$rankNew->subheading}}</h6>
                <p class="card-text">{{$rankNew->text}}</p>
                <p class="card-text"><small class="text-muted">{{$rankNew->caption}}</small></p>
+               <a href="/realnews/{{$rankNew->id}}" class="d-flex btn btn-primary __comprar">Ver detalle</a>
              </div>
          </div>
        </div>

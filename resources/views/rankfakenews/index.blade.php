@@ -5,7 +5,6 @@
   <section class="_ranking">
      <div class="_textosRanking">
     <h2 class="_rank">Ranking de Fake News</h2>
-    <a class="_verNoticia" href="/realnews">ver todas las noticias</a>
     </div>
     <?php $i = 0; ?>
     <?php $cant = $rankNews->count(); ?>
@@ -27,6 +26,7 @@
                  </div>
                      <h5 class="card-title">{{$rankNew->title}}</h5>
                      <h6 class="card-title">{{$rankNew->question}} </h6>
+                     <a href="/fakenews/{{$rankNew->id}}" class="d-flex btn btn-primary __comprar">Ver detalle</a>
 
                      </div>
                  </div>

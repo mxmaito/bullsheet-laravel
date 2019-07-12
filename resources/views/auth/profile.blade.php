@@ -5,7 +5,12 @@
     <div class="row align-items-center ">
       <div class="col sm-6 md-6 lg-6 d-flex justify-content-center ">
         <a href="profile/edit">Edit profile</a> <br>
-        <img src="/storage/{{Auth::user()->avatar}}" alt="avatar" class="_imgAvatar">
+        @if ( Auth::user()->avatar === "default_avatar.png" )
+          <img src="/img/{{Auth::user()->avatar}}" alt="avatar" class="_imgAvatar">
+        @else
+          <img src="/storage/{{Auth::user()->avatar}}" alt="avatar" class="_imgAvatar">
+        @endif
+
 
       </div>
       <div class="col sm-6 md-6 lg-6">

@@ -16,11 +16,14 @@
                  <div class="col-md-8">
                      <div class="card-body">
                      <div class="ranking_type">
-                 <img class="_newsType" src="img/internet.png" alt="news_type">
+
 
                  </div>
                      <h5 class="card-title">{{$fakenew->title}}</h5>
                      <h6 class="card-title">{{$fakenew->question}} </h6>
+                      <div class="col-6 d-flex justify-content-end">
+                        <a href="/fakenews/{{$fakenew->id}}" class="d-flex flex-wrap btn btn-primary  justify-content-center">Ver detalle</a>
+                      </div>
 
                      </div>
                  </div>
@@ -33,6 +36,3 @@
 
 @endsection
 </div>
-
-
-

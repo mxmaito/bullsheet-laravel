@@ -41,7 +41,7 @@ class UserController extends Controller
   public function store(Request $request)
   {
     $this->validate($request, $this->getValidationRules());
-    $request->file('avatar')->storePublicly('avatars');
+    $request->file('avatar')->storePublicly('public/avatars');
 
      $rutaArchivo = $request->file('avatar')->store('public');
      $nombreArchivo = basename($rutaArchivo);
