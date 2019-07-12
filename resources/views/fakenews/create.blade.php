@@ -1,9 +1,8 @@
 @extends('layouts.main')
 
 @section('content')
-<div class="_bgdegree">
-<div class="noticia">
-<div class="popup" id="popup">
+<div class="container">
+
 
 <h1>Subí un archivo que te hayan mandado por whatsapp</h1>
 
@@ -11,7 +10,7 @@
     @csrf
 
     <div class="form-group">
-        <input type="text" name="title" placeholder="Escribí el título" value="{{ old('title') }}">
+        <input type="text"  class="form-control" name="title" placeholder="Escribí el título" value="{{ old('title') }}">
         <p>{{ $errors->first('title') }}</p>
     </div>
 
@@ -21,17 +20,13 @@
     </div>
 
     <div class="form-group">
-    <textarea  name="question" id="" cols="30" rows="5" placeholder="Contanos qué te hace pensar que esta información es fake" value="{{ old('question') }}"></textarea>
+    <textarea  name="question" class="form-control" rows="3" placeholder="Contanos qué te hace pensar que esta información es fake" value="{{ old('question') }}"></textarea>
         <p>{{ $errors->first('question') }}</p>
     </div>
 
-    <div class="form-control">
-        <button>Enviar</button>
+    <div class="">
+        <button class="btn btn-primary">Enviar</button>
     </div>
-</form>
-</div>
+  </form>
 </div>
 @endsection
-</div>
-
-

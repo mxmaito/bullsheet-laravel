@@ -3,7 +3,7 @@
 @section('content')
 
   <section class="_ranking">
-
+    <h2 class="_rank">Ranking de Real News</h2>
     <?php $i = 0; ?>
     <?php $cant = $rankNews->count(); ?>
     <ul>
@@ -35,15 +35,11 @@
      </li>
      </div>
      @endforeach
-     </ul>
-
-
-
-
-
+    </ul>
   </section>
+
   <section class="_rankTable">
-  <h2 class="_rank2">Ranking de Usuarios</h2>
+  <h2 class="_rank2">Ranking de Usuarios de Real News</h2>
   <table class="table table-borderless">
      <thead>
        <tr>
