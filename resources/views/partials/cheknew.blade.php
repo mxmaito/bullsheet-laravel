@@ -133,8 +133,9 @@
       </div>
     </div>
 
-    <br>
-      <button class="btn btn-primary">Enviar</button>
+    <div class="form-group">
+       <button class="btn btn-primary">Enviar</button>
+    </div>
 
 </form>
 </div>
