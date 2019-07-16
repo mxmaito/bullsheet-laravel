@@ -7,9 +7,9 @@ use Faker\Generator as Faker;
 
 $factory->define(FakeNew::class, function (Faker $faker) {
     return [
-      'title' => $faker->word,
+      'title' => $faker->sentence(1),
       'question' => $faker->sentence(10),
-      'fakenewsfile' => 'default_avatar.png',
+      'fakenewsfile' => 'default_img.png',
       'user_id' => function () {
           return \DB::table('users')->get()->random()->id;
       }

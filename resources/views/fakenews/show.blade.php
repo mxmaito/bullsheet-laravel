@@ -2,22 +2,19 @@
 
 @section('content')
 
-<section class="_ranking">
+<section class=" _bgdegree ">
 
 
-  <div class="text-light text-center">
 
-    <br><h2>
-    {{$fakenew->title}}
-    </h2><br> <br>
-    <div class="_contenedorImagenNews">
+  <div class="container p-3 col-6">
+
+<div class="news-containerfull">
+    <h2>{{$fakenew->title}}</h2>
+    <div class="_contenedorImagenNewsFull">
     <img class="_imagenNews" src="/storage/fakenewsfiles/{{$fakenew['fakenewsfile']}}" alt="">
     </div>
-    <br>
-    <br><h3>
-    {{$fakenew->question}}
-    </h3><br> <br>
-
+      <p>{{$fakenew->question}}</p>
+    </div>
   </div>
 </section>
 
