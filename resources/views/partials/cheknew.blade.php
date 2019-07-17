@@ -125,10 +125,10 @@
       <label class="col-form-label" for="chek10">Los comentarios de los lectores dicen que podría ser una fake news?</label><
       <div class="col-4 justify-content-end btn-group-sm btn-group" data-toggle="buttons">
         <label class="btn btn-success">
-      <input class="" type="radio" name="chek10"  value="1">SI
+      <input class="" type="radio" name="chek10"  value="0">SI
       </label>
       <label class="btn btn-danger">
-      <input class=" " type="radio" name="chek10" value="0">NO
+      <input class=" " type="radio" name="chek10" value="1">NO
       </label>
       </div>
     </div>
