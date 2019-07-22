@@ -46,6 +46,7 @@
                 @enderror
             </div>
         </div>
+        <div id=errorNombre></div>
 
         <div class="form-group row d-flex justify-content-center">
             <div class="col-md-6">
@@ -58,7 +59,7 @@
                 @enderror
             </div>
         </div>
-
+        <div id=errorApellido></div>
 
 
         <div class="form-group row d-flex justify-content-center">
@@ -72,6 +73,7 @@
                 @enderror
             </div>
         </div>
+        <div id=errorEmail>d</div>
 
         <div class="form-group row d-flex justify-content-center">
             <div class="col-md-6">
