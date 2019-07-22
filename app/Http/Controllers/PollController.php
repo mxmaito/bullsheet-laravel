@@ -3,13 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
-use App\ChekNew;
-use App\FakeNew;
-use Auth;
 
-
-class ChekNewsController extends Controller
+class PollController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,16 +13,8 @@ class ChekNewsController extends Controller
      */
     public function index()
     {
-      $fakenews = \App\FakeNew::all()->take(6);
-      $rankNew = DB::table('chek_news')
-            ->join('fake_news','fake_news.id','=','fake_news_id')
-            ->select('fake_news.title','fake_news.question', 'fake_news.fakenewsfile')
-            ->orderBy('chekresult','desc')
-            ->take(5)
-            ->get();
-      return view ('rankfakenews.index')->with('fakenews', $fakenews)->with('rankNews', $rankNew);
+        //
     }
-
 
     /**
      * Show the form for creating a new resource.
@@ -36,7 +23,7 @@ class ChekNewsController extends Controller
      */
     public function create()
     {
-      //
+        
     }
 
     /**
@@ -47,20 +34,8 @@ class ChekNewsController extends Controller
      */
     public function store(Request $request)
     {
-      $fn = FakeNew::find($request->fake_news_id);
-
-      foreach ($request->get('chek') as $cheks => $value) {
-        $fn->checks()->create([
-          'cheks_id'=> $cheks,
-          'user_id'=> auth()->id(),
-          'value'=>$value
-        ]);
-      }
-
-      event(new \App\Events\FakeNewsChecked($fn));
-
-      // return redirect('/rankfakenews');
-  }
+        //
+    }
 
     /**
      * Display the specified resource.
