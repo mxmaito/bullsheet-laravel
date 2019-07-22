@@ -1,7 +1,7 @@
 @extends('layouts.showfakenews')
 
 @section('content')
-
+{{$fakenew}}
 <section class=" _bgdegree ">
   <div class="container p-3 col-6">
     <div class="news-containerfull">

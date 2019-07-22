@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\ChekNew;
+use Auth;
 
 
 class ChekNewsController extends Controller
@@ -44,23 +46,28 @@ class ChekNewsController extends Controller
      */
     public function store(Request $request)
     {
-      $cheknew = auth()->User()->chekNews()->create([
-          'chek1' => $request->chek1,
-          'chek2' => $request->chek2,
-          'chek3' => $request->chek3,
-          'chek4' => $request->chek4,
-          'chek5' => $request->chek5,
-          'chek6' => $request->chek6,
-          'chek7' => $request->chek7,
-          'chek8' => $request->chek8,
-          'chek9' => $request->chek9,
-          'chek10' => $request->chek10,
-          'fake_news_id' => $request->fake_news_id,
-          'chekresult' => $request->chek1 + $request->chek2 + $request->chek3 + $request->chek4 + $request->chek5 + $request->chek6 + $request->chek7 + $request->chek8 + $request->chek9 + $request->chek10,
-      ]);
+      $user_id =  Auth::user()->id;
+      $fake_news_id = $request->fake_news_id;
 
-      return redirect('/rankfakenews/');
+      foreach ($request->chek as $cheks => $value) {
+        $cheknew= [
+          'user_id'=> $user_id,
+          'fake_news_id'=>$fake_news_id,
+          'cheks_id'=>$cheks,
+          'value'=>$value
+        ];
+        ChekNew::create($cheknew) ;
 
+
+         //     'user_id'=> $user_id,
+         //     'fake_news_id'=>$fake_news_id,
+         //     'cheks_id'=>$cheks,
+         //     'value'=>$value
+         //   ]);
+         }
+
+
+      //return redirect('/rankfakenews/');
     }
 
     /**

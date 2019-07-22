@@ -17,7 +17,7 @@ $factory->define(ChekNew::class, function (Faker $faker) {
       'chek8' => $faker->numberBetween($min=0, $max=1),
       'chek9' => $faker->numberBetween($min=0, $max=1),
       'chek10' => $faker->numberBetween($min=0, $max=1),
-      'chekresult' => $faker->numberBetween($min=0, $max=10),
+      'chekresult' => 0,
       'user_id' => function () {
           return \DB::table('users')->get()->random()->id;
       },

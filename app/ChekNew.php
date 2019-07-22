@@ -11,11 +11,18 @@ class ChekNew extends Model
   protected $with = ['user','fakenew'];
 
   protected $fillable = [
-      'chek1', 'chek2', 'chek3', 'chek4', 'chek5', 'chek6', 'chek7', 'chek8', 'chek9', 'chek10', 'chekresult', 'fake_news_id'
-  ];
+      'user_id','value','cheks_id', 'fake_news_id'];
 
   protected $dates = ['created_at'];
 
+
+  //  public function refreshScore() {
+  //    return $this->atrributes['chekresult']= $this->chek1 + $this->chek2 + $this->chek3 +
+  //    $this->chek4 + $this->chek5 + $this->chek6 +
+  //    $this->chek7 + $this->chek8 + $this->chek9 +
+  //    $this->chek10;
+  //
+  // }
 
 
   public function user()
