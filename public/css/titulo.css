@@ -21,12 +21,20 @@
   align-items: center;
 }
 
-._articulo-titulo-texto{
+._articulo-titulo-texto-A{
 display: flex;
 flex-wrap:  wrap;
 align-content: center;
 justify-content: center;
 }
+._articulo-titulo-texto-B{
+    display: flex;
+    flex-wrap:  wrap;
+    align-content: center;
+    justify-content: center;
+
+    }
+
 
 ._textoArticulo{
   font-size: 1em;
@@ -52,4 +60,17 @@ justify-content: center;
 
 ._contenedor-seccion-titulo{
   background:linear-gradient(to right, #051937, #39235a, #7b1c69, #bb005f, #eb123d);
+}
+
+.scaleUp{
+    transform: scale(1.1);
+}
+.scaleDown{
+    transform: scale(1);
+}
+
+/* CLASE HERNI */
+
+.card-columns {
+    transition: all 0.25s ease-in-out;
 }

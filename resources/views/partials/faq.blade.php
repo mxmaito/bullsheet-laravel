@@ -2,7 +2,7 @@
 
 <div class="container-fluid p-0">
   <section class="_seccion-titulo" id="faq">
-    <article class="col-12 col-lg-6 _articulo-titulo-texto">
+    <article id="bloque2" class="col-12 col-lg-6 _articulo-titulo-texto-B">
       <h2>Preguntas frecuentes</h2>
       <p class="_textoArticulo">Para que te saques todas las dudas. </p>
     </article>

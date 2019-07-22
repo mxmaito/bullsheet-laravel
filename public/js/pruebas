@@ -1,0 +1,329 @@
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+console.log(realNew);
+
+Array.from(realNew).forEach((mouseOverReal)=>{
+ document.addEventListener("mouseover",mouseOverReal);
+ });
+
+Array.from(realNew).forEach((mouseOutReal)=>{
+    document.addEventListener("mouseout",mouseOutReal);
+    });
+
+
+function mouseOverReal(){
+    realNew.style.transform= "scale(1.1)";
+}
+function mouseOutReal(){
+    realNew.style.transform= "scale(1)";
+}
+
+
+
+
+//////////////////////////////////////////////////////////
+
+let fakeNew = document.getElementById('noticiaFalsa');
+    let realNew = document.getElementsByClassName('noticiaReal');
+    console.log(realNew);
+
+
+    document.addEventListener("mouseover",mouseOverReal);
+    document.addEventListener("mouseover",mouseOutReal);
+
+    function mouseOverReal(){
+        document.("noticiaReal").style.transform= "scale(1.1)";
+    }
+    function mouseOutReal(){
+        document.getElementsByName("noticiaReal").style.transform= "scale(1)";
+    }
+
+    ///////////////////////////////////////////////
+
+
+let fakeNew = document.getElementById('noticiaFalsa');
+    let realNew = document.querySelectorAll('.noticiaReal');
+    console.log(realNew);
+
+
+    realNew.onmouseover= function(){
+        realNew.classList.add('scaleUp');
+    }
+    realNew.onmouseout= function(){
+        realNew.classList.remove('scaleUp');
+    }
+
+    //////////////////////////////////////////////////////
+
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+let Array_realNew=Array.from(realNew)
+console.log(realNew);
+
+Array_realNew.forEach(el=>{
+ document.addEventListener("mouseover",mouseOverReal);
+ document.addEventListener("mouseout",mouseOutReal);
+});
+
+
+function mouseOverReal(){
+    realNew.style.transform= "scale(1.1)";
+}
+function mouseOutReal(){
+    realNew.style.transform= "scale(1)";
+}
+
+//////////////////////////
+
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('div #noticiaReal');
+let i;
+console.log(realNew);
+
+for(i=0; i<realNew.length; i++){
+ realNew[i].addEventListener("mouseover",mouseOverReal);
+ realNew[i].addEventListener("mouseout",mouseOutReal);
+}
+
+
+function mouseOverReal(){
+    realNew.style.transform= "scale(1.1)";
+}
+function mouseOutReal(){
+    realNew.style.transform= "scale(1)";
+}
+
+////////////////////////////////////////
+
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+
+console.log(realNew);
+
+for(i=0; i<realNew.length; i++){
+ document.addEventListener("mouseover",mouseOverReal);
+ document.addEventListener("mouseout",mouseOutReal);
+}
+
+
+function mouseOverReal(){
+    realNew[i].style.transform = "scale(1.1)";
+}
+function mouseOutReal(){
+    realNew[i].style.transform = "scale(1)";
+}
+
+
+///////////////////////////////////////
+
+let fakeNew = document.getElementById('noticiaFalsa');
+    let realNew = document.getElementById('noticiaReal');
+    console.log(realNew);
+
+
+    document.addEventListener("mouseover",mouseOverReal);
+    document.addEventListener("mouseover",mouseOutReal);
+
+    function mouseOverReal(){
+        realNew.style.transform= "scale(1.1)";
+    }
+    function mouseOutReal(){
+        realNew.style.transform= "scale(1)";
+    }
+
+///////////////////////////////////////////
+window.onload=function(){
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+console.log(realNew);
+
+for (var i = 0; i < realNew.length; i++){
+    document.addEventListener("mouseover", scaleUp)
+    document.addEventListener("mouseout", scaleDown)
+}
+
+function scaleUp(){
+    realNew[0].style.transform= "scale('1.1')"
+}
+
+function scaleDown(){
+    realNew[0].style.transform= "scale('1')"
+}
+}
+
+//////////////////////////////////////////
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+const realNew = document.getElementById('noticiaReal');
+console.log(realNew);
+
+for (const realNews of realNew){
+    this.addEventListener("mouseover", function(mouseover){
+        realNew.style.transform= "scale('1.1')"
+    })
+    document.addEventListener("mouseout", function(mouseout){
+        realNew.style.transform= "scale('1')"
+    })
+}
+
+////////////////////////////////////
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.getElementById('noticiaReal');
+console.log(realNew);
+
+document.addEventListener("mouseover", scaleUp);
+document.addEventListener("mouseleave", scaleDown);
+
+
+function scaleUp(){
+    realNew.style.transform = "scale(1.1)";
+}
+
+function scaleDown(){
+    realNew.style.transform = "scale(1)";
+}
+
+////////////////////////////////////////////////
+
+window.onload= function(){
+
+
+
+}
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+console.log(realNew);
+
+document.addEventListener("mouseover", scaleUp);
+
+
+
+function scaleUp(){
+  if(realNew.classList.contains('scaleUp')){
+      realNew.classList.remove('scaleUp');
+  }else{
+      realNew.classList.add('scaleUp')
+  }
+}
+
+
+///////////////////////////
+
+window.onload= function(){
+
+
+
+}
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.getElementById('noticiaReal');
+console.log(realNew);
+
+document.addEventListener("mouseover", function(){
+    realNew.classList.add('scaleUp')
+});
+document.addEventListener("mouseout", function(){
+    realNew.classList.remove('scaleUp')
+});
+
+/////////////////////////////////
+
+window.onload= function(){
+
+
+
+}
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+console.log(realNew);
+
+
+
+document.addEventListener("mouseover", scaleUp);
+
+
+
+function scaleUp(){
+  if(realNew.classList.contains('scaleUp')){
+      realNew.classList.add('scaleUp');
+  }else{
+      realNew.classList.remove('scaleUp')
+  }
+}
+
+
+///////////////////////////////////////////
+
+
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+let i;
+console.log(realNew);
+
+Array.from(realNew).forEach(()=>{
+ document.addEventListener("mouseover",mouseOverReal);
+ });
+
+Array.from(realNew).forEach(()=>{
+    document.addEventListener("mouseout",mouseOutReal);
+    });
+
+
+function mouseOverReal(){
+    realNew[1].style.transform= "scale(1.05)";
+}
+function mouseOutReal(){
+    realNew[1].style.transform= "scale(1)";
+}
+
+//////////////////////////////////////////////
+
+window.onload= function(){
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNew = document.querySelectorAll('.noticiaReal');
+
+console.log(realNew);
+
+for (let i=0;i<realNew.length; i++){
+ document.addEventListener("mouseover",mouseOverReal);
+ document.addEventListener("mouseout",mouseOutReal);
+ };
+
+
+
+function mouseOverReal(){
+    realNew[0].style.transform= "scale(1.05)";
+}
+function mouseOutReal(){
+    realNew[0].style.transform= "scale(1)";
+}
+}
+
+//////////////////////////////////////////////////
+
+let fakeNew = document.querySelectorAll('.noticiaFalsa');
+let realNews = Array.prototype.slice.apply(document.querySelectorAll('.noticiaReal'));
+
+console.log(realNews);
+
+realNews.forEach((realNew) => {
+    document.addEventListener("mouseover",mouseOverReal);
+    document.addEventListener("mouseout",mouseOutReal);
+  });
+
+
+function mouseOverReal(){
+    realNew[realNew].style.transform= "scale(1.05)";
+}
+function mouseOutReal(){
+    realNews[realNew].style.transform= "scale(1)";
+}
+
