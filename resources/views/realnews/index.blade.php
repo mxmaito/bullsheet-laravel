@@ -6,7 +6,7 @@
       <h1>Feed de Realnews</h1>
       <div class="row">
         @foreach ($realnews as $realnew)
-        <div  class="col-sm-4 noticiaReal">
+        <div  class="col-sm-10 col-md-6 col-lg-4 noticiaReal">
           <div class="card-columns">
             <div class="card bg-light" style="width: 22rem;">
               <img src="/storage/realnewsfiles/{{$realnew->realnewsfile}}" width=100% alt="imagen">

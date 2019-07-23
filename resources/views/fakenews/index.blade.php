@@ -6,7 +6,7 @@
   <h1>Feed de Fakenews</h1>
   <div class="row">
         @foreach ($fakenews as $fakenew)
-          <div class="col-sm-4">
+          <div class="col-sm-10 col-md-6 col-lg-4">
             <div class="card-columns">
               <div class="card bg-light" style="width: 22rem;">
                 <img class="card-img-top" src="/storage/fakenewsfiles/{{$fakenew->fakenewsfile}}"  alt="imagen">
