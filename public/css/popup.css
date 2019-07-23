@@ -101,8 +101,9 @@
 ._logoregistro{
 	font-family: 'Playball', cursive;
 	color: #ffffff;
-	font-size: 2em;	
-	margin-top: 10px;	
+    font-size: 2em;
+    position: absolute;
+	margin-top: 10px;
 	margin-left: 15px;
 	z-index: 1000;
 	list-style: none;
