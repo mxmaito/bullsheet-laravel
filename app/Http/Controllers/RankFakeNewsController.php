@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\DB;
 class RankFakeNewsController extends Controller
 {
     public function index()
-<<<<<<< HEAD
     {
       $fakenews = \App\FakeNew::all()->take(5);
         $rankNew= DB::table('chek_news')
@@ -16,10 +15,6 @@ class RankFakeNewsController extends Controller
             ->orderBy('average','asc')
             ->take(5)
             ->get();
-=======
-    {   $fakenews = \App\FakeNew::all()->take(5);
-        $rankNew= DB::getPdo()->query('select fake_news_id, sum(chekresult),count(*),sum(chekresult)/count(*) as Average from bullsheet.chek_news group by fake_news_id order by Average desc')->fetchAll();
->>>>>>> origin/tincho
 
         $rank = DB::select('fake_news')
             ->join('users','users.id','=','fake_news.user_id')

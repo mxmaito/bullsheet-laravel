@@ -7,7 +7,7 @@
       <div class="row">
         @foreach ($realnews as $realnew)
         <div  class="col-sm-4 noticiaReal">
-          <div class="card-columns">
+          <div class="card-columns d-flex align-content-around flex-wrap">
             <div class="card bg-light" style="width: 22rem;">
               <img src="/storage/realnewsfiles/{{$realnew->realnewsfile}}" width=100% alt="imagen">
               <div class="card-body">

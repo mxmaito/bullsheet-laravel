@@ -7,8 +7,8 @@
   <div class="row">
         @foreach ($fakenews as $fakenew)
           <div class="col-sm-4 d-flex flex-column">
-            <div class="card-columns d-flex align-content-around flex-wrap align-self-stretch">
-              <div class="card bg-light" style="width: 22rem;">
+            <div class="card-columns d-flex align-content-around flex-wrap">
+              <div class="card bg-light" >
                 <img class="card-img-top" src="/storage/fakenewsfiles/{{$fakenew->fakenewsfile}}"  alt="imagen">
                 <div class="card-body">
                   <h5 class="card-title">{{$fakenew->title}}</h5>

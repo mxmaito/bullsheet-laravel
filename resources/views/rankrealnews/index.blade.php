@@ -14,7 +14,7 @@
     <div class="card mb-3  " style="max-width: 540px;">
        <div class="row no-gutters">
           <div class="col-md-4">
-          <img src="/storage/realnewsfiles/{{$rankNew->realnewsfile}}" width=100% alt="imagen">
+          <img src="/storage/realnewsfiles/{{$rankNew->realnewsfile}}" height="200px" alt="imagen">
            </div>
             <div class="col-md-8">
              <div class="card-body">
