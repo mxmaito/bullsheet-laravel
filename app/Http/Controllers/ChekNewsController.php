@@ -59,7 +59,7 @@ class ChekNewsController extends Controller
 
       event(new \App\Events\FakeNewsChecked($fn));
 
-      // return redirect('/rankfakenews');
+      return redirect('/rankfakenews');
   }
 
     /**

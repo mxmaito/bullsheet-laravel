@@ -16,7 +16,7 @@ class RankFakeNewsController extends Controller
             ->take(5)
             ->get();
 
-        $rank = DB::select('fake_news')
+        $rank = DB::table('fake_news')
             ->join('users','users.id','=','fake_news.user_id')
             ->select('users.first_name','users.last_name',DB::raw('count(*) as news_count'))
             ->groupBy ('users.id')

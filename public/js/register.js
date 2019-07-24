@@ -124,7 +124,7 @@ function validatePassword(password) {
         errorRePassword.classList.remove('alert-danger');
         repeat.classList.remove('is-invalid');
         repeat.classList.add('is-valid');
-        register.elements.button.focus();
+
 
         return true;
       }

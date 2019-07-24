@@ -39,7 +39,7 @@ class JudgeNewsController extends Controller
           'real_news_id' => $request->real_news_id,
         ]);
 
-      return redirect('/rankrealnews/');  
+      return redirect('rankrealnews/');  
     }
 
     /**
