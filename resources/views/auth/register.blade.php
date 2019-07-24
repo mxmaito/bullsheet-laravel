@@ -15,10 +15,10 @@
 </head>
 <body>
 
-
+<a class="_logoregistro" href="/">BullSheet</a>
  <!--Sección del formulario de registro-->
 <div class="overlay" id="overlay">
-  <a class="_logoregistro" href="/home">BullSheet</a>
+
   <div class="popup" id="popup">
   <?php
     if(isset($errores)):?>
@@ -33,11 +33,11 @@
     <!--<a href="#" id="btn-cerrar-popup" class="btn-cerrar-popup"><i class="fas fa-times-circle"></i></a>-->
     <h3>Registrate!</h3>
     <h4>Y forma parte de nuestra comunidad!</h4>
-    <form method="POST" action="{{ route('register') }}">
+    <form class="formRegister" method="POST" action="{{ route('register') }}">
         @csrf
         <div class="form-group row d-flex justify-content-center">
             <div class="col-md-6">
-                <input id="first_name" type="text" class="form-control @error('name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus placeholder="Nombre">
+                <input id="first_name" type="text" class="form-control " name="first_name " name="first_name" value="{{ old('first_name') }}"  autocomplete="first_name" autofocus placeholder="Nombre">
 
                 @error('first_name')
                     <span class="invalid-feedback" role="alert">
@@ -46,10 +46,11 @@
                 @enderror
             </div>
         </div>
+        <div id=errorNombre></div>
 
         <div class="form-group row d-flex justify-content-center">
             <div class="col-md-6">
-                <input id="last_name" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus placeholder="Apellido">
+                <input id="last_name" type="text" class="form-control " name="last_name" value="{{ old('last_name') }}" autocomplete="last_name" autofocus placeholder="Apellido">
 
                 @error('last_name')
                     <span class="invalid-feedback" role="alert">
@@ -58,12 +59,12 @@
                 @enderror
             </div>
         </div>
-
+        <div id=errorApellido></div>
 
 
         <div class="form-group row d-flex justify-content-center">
             <div class="col-md-6 ">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="E-mail">
+                <input id="email" type="email" class="form-control " name="email" value="{{ old('email') }}" autocomplete="email" placeholder="E-mail">
 
                 @error('email')
                     <span class="invalid-feedback" role="alert">
@@ -72,10 +73,11 @@
                 @enderror
             </div>
         </div>
+        <div id=errorEmail></div>
 
         <div class="form-group row d-flex justify-content-center">
             <div class="col-md-6">
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password" placeholder="Password">
+                <input id="password" type="password" class="form-control" name="password"  autocomplete="new-password" placeholder="Password">
 
                 @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -83,13 +85,16 @@
                     </span>
                 @enderror
             </div>
+            <small class="form-text text-muted">Al menos 8 caracteres, debe contenter letras en mayúsculas, minúsculas y números</small>
         </div>
+        <div id=errorPassword></div>
 
         <div class="form-group row d-flex justify-content-center">
             <div class="col-md-6">
-                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirmá el password">
+                <input id="password-confirm" type="password" class="form-control" name="password_confirm"  autocomplete="new-password" placeholder="Confirmá el password">
             </div>
         </div>
+        <div id=errorRePassword></div>
 
         <div class="form-group row mb-0 d-flex justify-content-center">
             <div class="col-md-6">
@@ -103,6 +108,7 @@
 <!--Termina la Sección del formulario de registro-->
 
 </body>
+<script src="js/register.js"></script>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

@@ -15,9 +15,9 @@
 
  <!--Sección del formulario de registro-->
 
-
+ <a class="_logoregistro" href="/">BullSheet</a>
 <div class="overlay" id="overlay">
-  <a class="_logoregistro" href="/home">BullSheet</a>
+
   <div class="popup" id="popup">
   <?php
     if(isset($errores)):?>
