@@ -6,11 +6,13 @@ use Illuminate\Support\Facades\DB;
 class RankFakeNewsController extends Controller
 {
     public function index()
-    {   $fakenews = \App\FakeNew::all()->take(5);
+    {
+      $fakenews = \App\FakeNew::all()->take(5);
         $rankNew= DB::table('chek_news')
             ->join('fake_news','fake_news.id','=','fake_news_id')
             ->select('fake_news.id','fake_news.title','fake_news.question', 'fake_news.fakenewsfile')
-            ->orderBy('chekresult','asc')
+            ->groupBy('fake_news_id')
+            ->orderBy('average','asc')
             ->take(5)
             ->get();
 

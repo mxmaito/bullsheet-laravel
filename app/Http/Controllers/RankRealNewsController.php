@@ -11,7 +11,7 @@ class RankRealNewsController extends Controller
       $rankNew= DB::table('judge_news')
             ->join('real_news','real_news.id','=','real_news_id')
             ->select('real_news.id','real_news.headline','real_news.subheading', 'real_news.text','real_news.realnewsfile','real_news.caption')
-            ->orderBy('judge','asc')
+            ->orderBy('judge','desc')
             ->take(5)
             ->get();
       $rank = DB::table('real_news')
