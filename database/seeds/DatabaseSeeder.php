@@ -11,10 +11,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call([
+          CheksTableSeeder::class,
+        ]);
         factory(App\User::class, 20)->create();
         factory(App\FakeNew::class, 20)->create();
         factory(App\RealNew::class, 20)->create();
-        factory(App\JudgeNew::class, 20)->create();
-        factory(App\ChekNew::class, 20)->create();
+        factory(App\JudgeNew::class, 10)->create();
+        //factory(App\ChekNew::class, 10)->create();
     }
 }

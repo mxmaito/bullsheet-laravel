@@ -11,7 +11,7 @@ $factory->define(FakeNew::class, function (Faker $faker) {
       'question' => $faker->sentence(10),
       'fakenewsfile' => 'default_img.png',
       'user_id' => function () {
-          return \DB::table('users')->get()->random()->id;
-      }
+        return \DB::table('users')->get()->random()->id;
+    }
     ];
 });

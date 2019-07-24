@@ -11,7 +11,7 @@ class ChekNew extends Model
   protected $with = ['user','fakenew'];
 
   protected $fillable = [
-      'chek1', 'chek2', 'chek3', 'chek4', 'chek5', 'chek6', 'chek7', 'chek8', 'chek9', 'chek10', 'chekresult', 'fake_news_id'
+      'user_id', 'cheks_id','value', 'fake_news_id'
   ];
 
   protected $dates = ['created_at'];
@@ -20,12 +20,12 @@ class ChekNew extends Model
 
   public function user()
   {
-      return $this->belongsTo('App\User',  'foreign_key');
+      return $this->belongsTo('App\User');
   }
 
   public function fakeNews()
   {
-      return $this->belongsTo('App\FakeNew', 'foreign_key');
+      return $this->belongsTo('App\FakeNew', 'cheks_id');
   }
 
 

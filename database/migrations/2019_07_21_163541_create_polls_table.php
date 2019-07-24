@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFakeNewsTable extends Migration
+class CreatePollsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,14 @@ class CreateFakeNewsTable extends Migration
      */
     public function up()
     {
-        Schema::create('fake_news', function (Blueprint $table) {
+        Schema::create('polls', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title', 80);
-            $table->text('question');
-            $table->string('fakenewsfile');
-            $table->float('average', 4 , 2 )->default(0);
-            $table->timestamps();
             $table->bigInteger('user_id')->unsigned()->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('user_id')->on('chek_news');
+            $table->bigInteger('fake_news_id')->unsigned()->nullable();
+            $table->foreign('fake_news_id')->references('fake_news_id')->on('chek_news');
+            $table->bigInteger('result');
+            $table->timestamps();
         });
     }
 
@@ -32,6 +31,6 @@ class CreateFakeNewsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('fake_news');
+        Schema::dropIfExists('polls');
     }
 }
