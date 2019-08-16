@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\FakeNew;
 
 class BullsheetController extends Controller
 {
@@ -13,7 +14,9 @@ class BullsheetController extends Controller
      */
     public function index()
     {
-        return view ('/layouts/home');
+
+        $fakenews = \App\FakeNew::latest()->limit(3)->get();
+        return view ('/layouts/home')-> with ('fakenews', $fakenews);
     }
 
     /**

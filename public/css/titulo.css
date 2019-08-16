@@ -74,3 +74,15 @@ justify-content: center;
 .card-columns {
     transition: all 0.25s ease-in-out;
 }
+
+.__btnRegistrate{
+    background-color: #7b1c69;
+    border-color: #7b1c69;
+    color:white;
+}
+
+.__btnRegistrate:hover{
+    background-color: #7b1c69;
+    border-color: #7b1c69;
+    color:#F9EFD4;
+}

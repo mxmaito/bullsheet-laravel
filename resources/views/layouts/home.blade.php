@@ -16,7 +16,6 @@
 
       @include('partials/header')
       @include('partials/presentacion')
-      @include('partials/faq')
       @include('partials/footer')
 
 
