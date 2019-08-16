@@ -3,21 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
 
-use App\User;
-use App\cheks;
+use App\FakeNew;
 
-class FakeNewsController extends Controller
+
+class SearchFakeNewsController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-      $fakenews = DB::table('fake_news')->get();
+
+      $busqueda = $request->input('busqueda');
+      $fakenews = DB::table('fake_news')
+                  ->where('title', 'LIKE', '%'.$busqueda.'%')
+                  ->orWhere('question', 'LIKE', '%'.$busqueda.'%')
+                  ->get();
       return view ('fakenews.index')->with('fakenews', $fakenews);
     }
 
@@ -28,7 +34,7 @@ class FakeNewsController extends Controller
      */
     public function create()
     {
-        return view ('fakenews.create');
+        //
     }
 
     /**
@@ -39,24 +45,7 @@ class FakeNewsController extends Controller
      */
     public function store(Request $request)
     {
-      $this->validate($request, $this->getValidationRules());
-
-      $request->fakenewsfile->storePublicly('public/fakenewsfiles');
-
-      if(isset($request->fakenewsfile)){
-        $rutaArchivo = $request->fakenewsfile->storePublicly('public/fakenewsfiles');
-        $nombreArchivo = basename($rutaArchivo);
-      }
-
-      $fakenew = auth()->user()->fakeNews()->create([
-          'title' => $request->title,
-          'question' => $request->question,
-          'fakenewsfile' => $nombreArchivo,
-      ]);
-
-      //$filepath = $request->fakenewsfile->storePublicly('fakenewsfiles');
-
-      return redirect('/fakenews/' . $fakenew->id);
+        //
     }
 
     /**
@@ -65,15 +54,9 @@ class FakeNewsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(\App\FakeNew $fakenew,\App\cheks $cheks )
+    public function show($id)
     {
-      $cheks=cheks::all();
-      //dd($cheks->toArray());
-      return view('fakenews.show' , [
-        'fakenew' => $fakenew,
-        'cheks' => $cheks
-      ]);
-
+        //
     }
 
     /**
@@ -108,13 +91,5 @@ class FakeNewsController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    private function getValidationRules(){
-      return[
-        'title' => 'required',
-        'fakenewsfile' => 'required | file',
-        'question' => 'required',
-      ];
     }
 }
