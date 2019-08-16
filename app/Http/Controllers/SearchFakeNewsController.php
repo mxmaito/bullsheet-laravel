@@ -24,7 +24,12 @@ class SearchFakeNewsController extends Controller
                   ->where('title', 'LIKE', '%'.$busqueda.'%')
                   ->orWhere('question', 'LIKE', '%'.$busqueda.'%')
                   ->get();
-      return view ('fakenews.index')->with('fakenews', $fakenews);
+      if(count($fakenews)>0){
+        return view ('fakenews.index')->with('fakenews', $fakenews);
+      }else{
+        return view ('fakenews.noresults')->with('fakenews', $fakenews);
+      }
+
     }
 
     /**

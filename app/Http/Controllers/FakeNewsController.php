@@ -17,7 +17,7 @@ class FakeNewsController extends Controller
      */
     public function index()
     {
-      $fakenews = DB::table('fake_news')->get();
+      $fakenews = DB::table('fake_news')->paginate(9);
       return view ('fakenews.index')->with('fakenews', $fakenews);
     }
 

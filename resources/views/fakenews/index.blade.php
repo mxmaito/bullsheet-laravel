@@ -35,6 +35,9 @@
             </div>
           @endforeach
     </div>
+    <div class="row">
+      {{ $fakenews->links() }}
+    </div>
   </div>
 </div>
 @endsection

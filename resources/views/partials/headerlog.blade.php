@@ -6,6 +6,26 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
              <ul class="navbar-nav ml-md-auto">
+               <li class="nav-item">
+                 <a class="nav-link  _navItem " href="">FAQ </a>
+               </li>
+               <li class="nav-item ">
+                 <a class="nav-link _navItem" href="">ABOUT</a>
+               </li>
+               <li class="nav-item ">
+                 <a class="nav-link  _navItem" href="/rankfakenews">RANK</a>
+               </li>
+               <li class="nav-item ">
+                 <a class="nav-link  _navItem" href="/fakenews">FAKE NEWS</a>
+               </li>
+               @auth
+                 <li class="nav-item ">
+                   <a class="nav-link  _navItem" href="fakenews/new">ADD FAKE NEWS</a>
+                 </li>
+               @endauth
+
+
+<!--
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     RANKING</a>
@@ -34,18 +54,14 @@
                     <a class="dropdown-item" href="/realnews/new">Real News</a>
                     </div>
                 </li>
-
+-->
 
                     @guest
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('LOGIN') }}</a>
                         </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
+                    @endguest
+                    @auth
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->first_name }} <span class="caret"></span>
@@ -64,7 +80,7 @@
                                 </form>
                             </div>
                         </li>
-                    @endguest
+                    @endauth
                 {{-- </ul> --}}
                 </li>
              </ul>

@@ -11,26 +11,27 @@ use App\Http\Controllers\RealNewsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+// RUTAS DE REGISTRO Y LOGIN
+
 Route::get('/registro', function(){
   return view ('auth/register');
 });
+
 Route::get('/login', function(){
   return view ('login');
 });
 
-//Route::get('/news', 'NewsController@index');
+Auth::routes();
 
-Route::get('/fakenews', 'FakeNewsController@index');
+
+// RUTAS DE NAVEGACIÓN PARA USUARIOS REGISTRADOS
 
 Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/fakenews/new', 'FakeNewsController@create');
-    Route::get('/fakenews/{fakenew}', 'FakeNewsController@show');
     Route::post('/fakenews', 'FakeNewsController@store');
-    // Route::get('/rankrealnews', 'RankRealNewsController@index');
-    Route::get('/searchfakenews', 'SearchFakeNewsController@index');
     Route::get('/rankrealnews', 'RankRealNewsController@index');
-    Route::get('/rankfakenews', 'RankFakeNewsController@index');
     Route::post('/rankfakenews', 'ChekNewsController@store');
     // Route::get('/rankrealnews', 'RankRealNewsController@index');
     // Route::post('/rankrealnews', 'JudgeNewsController@store');
@@ -46,17 +47,20 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/profile/edit','UserController@store');
     });
 
+// RUTAS DE NAVEGACIÓN PARA USUARIOS E INVITADOS
+
+    Route::get('/', 'BullsheetController@index');
+    Route::get('/fakenews', 'FakeNewsController@index');
+    Route::get('/fakenews/{fakenew}', 'FakeNewsController@show');
+    Route::get('/searchfakenews', 'SearchFakeNewsController@index');
+    Route::get('/rankfakenews', 'RankFakeNewsController@index');
 
 
 
-Route::get('/', 'BullsheetController@index');
+
 
 
 
 Route::get('/logout', function(){
   return view('/layouts/home');
 });
-
-
-
-Auth::routes();
